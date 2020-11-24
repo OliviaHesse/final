@@ -1,0 +1,26 @@
+{% extends '_templates/base.njk' %}
+
+{% block content %}
+<article class="container">
+  <h1>Food and Fun</h1>
+  <p>Some of the best places to eat in this musical and magical city!</p>
+  <div class="row">
+    {% for restaurant in restaurants.restaurants %}
+    <div class="col-sm-4 col-md-3">
+      <div class="card">
+          <img src="img/restaurants/{{restaurant.image}}" class="card-img-top" alt="photo of restaurant">
+          <div class="card-body">
+            <h5 class="card-title">{{ restaurant.name }}</h5>
+            <p class="card-text">{{restaurant.category}}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ restaurant.address}}</li>
+          <div class="card-body">
+            <a href="{{restaurant.website}}" target="_blank" class="card-link">Website</a>
+          </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</article>
+{% endblock %}
