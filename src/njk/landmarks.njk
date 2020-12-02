@@ -2,8 +2,10 @@
 
 {% block content %}
 <article class="container">
-  <h1>Landmarks</h1>
-  <p>Notable sights to see!</p>
+  <div class="col-md-6 offset-md-3 justify-content-center text-center">
+    <h1>Landmarks</h1>
+    <p>Notable sights to see!</p>
+  </div>
     <div class="row">
       {% for landmarks in austin.landmarks %}
       <div class="col-sm-6">

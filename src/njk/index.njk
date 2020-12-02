@@ -6,7 +6,27 @@
     <div class="col-md-6 offset-md-3 justify-content-center text-center">
       <h1>Welcome to Austin!</h1>
       <p>Austin is the state capital of Texas, an inland city bordering the Hill Country region. Home to the University of Texas flagship campus, Austin is known for its eclectic live-music scene centered around country, blues and rock. Its many parks and lakes are popular for hiking, biking, swimming and boating. South of the city, Formula One's Circuit of the Americas raceway has hosted the United States Grand Prix.</p>
+      <p>This website will serve as your tour for this city and all the gems it has to offer! We make sure to include the best landmarks to visit, places to eat, and activites to do if you ever find yourself bored in the weirdest city in Texas.</p>
     </div>
   </div>
 </div>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Activity</th>
+      <th scope="col">Date</th>
+      <th scope="col">Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for activity in austin.activities %}
+      <th scope="row">{{ activity.number }}</th>
+      <td>{{ activity.activity }} </td>
+      <td> {{ activity.date_time }}</td>
+      <td> {{ activity.address }} </td>
+    </tr>
+  </tbody>
+    {% endfor %}
+</table>
 {% endblock %}

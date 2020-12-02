@@ -1,0 +1,17 @@
+{% extends '_templates/base.njk' %}
+
+{% block content %}
+  <div class="col-md-6 offset-md-3 justify-content-center text-center">
+    <h1>Still haven't had enough?</h1>
+    <p>Here are some murals to check out around the city! No pictures needed, you'll do that when you get there! </p>
+  </div>
+  <div class="row" >
+    {% for mural in austin.murals %}
+    <div class="card-body col-sm-4 ">
+      <h5 class="card-title">{{ mural.name }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ mural.address}}</h6>
+      <a href="{{mural.map_location}}" class="card-link">Map Location</a>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}
